@@ -15,7 +15,6 @@ export default function InputBox() {
       const urls = createsArray(fileCheckerTextArea.current.value);
       if (isValidInput(urls)) {
         const sizeInfo = await fetchFileSizes(urls);
-        console.log(sizeInfo);
       } else {
         throw new Error("Input is invalid");
       }
@@ -31,14 +30,11 @@ export default function InputBox() {
           <strong>Example:</strong>
         </p>
         <code className="p-4 bg-gray-50 border border-gray-200 rounded-lg mb-4">
-          https://placecats.com/neo/300/200
+          https://resources.mandmdirect.com/assets/homepage/panels/250120/LD19_HPM_desktop.webp
           <br />
-          https://placecats.com/millie/300/150
+          https://resources.mandmdirect.com/assets/roundels/2024/Quicklinks/241219/IE/roundel-new-in_desktop.jpg
           <br />
-          https://placecats.com/millie_neo/300/200
-          <br />
-          https://placecats.com/neo_banana/300/200
-          <br />
+          https://resources.mandmdirect.com/assets/roundels/2024/Quicklinks/241219/IE/roundel-mens_desktop.jpg
         </code>
         <textarea
           placeholder="Enter URLs here"

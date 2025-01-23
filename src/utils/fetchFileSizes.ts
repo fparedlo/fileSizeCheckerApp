@@ -10,20 +10,21 @@ interface FileSize {
 }
 
 async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
-  console.log(urls);
-  try {
-    zodInputCheck.parse(urls);
-  } catch (e) {
-    throw new Error(`${(e as Error).message}`);
-  }
   const fileSizes = await Promise.all(
     urls.map(async (url) => {
       try {
-        const response = await fetch(url, { method: "HEAD", mode: "no-cors" }); // Use HEAD to get headers only
+        const response = await fetch(
+          `https://cors-anywhere.herokuapp.com/${url}`,
+          {
+            method: "HEAD",
+          }
+        );
+        console.log(response);
         if (!response.ok) {
           throw new Error(`Error fetching ${url}: ${response.statusText}`);
         }
         const contentLength = response.headers.get("Content-Length");
+        console.log(contentLength);
         return {
           url: url,
           size: contentLength

@@ -18,7 +18,6 @@ function createsArray(urls: string): string[] {
 
 function isValidInput(urls: string[]): boolean {
   const wrongUrls = urls.find((url) => !validUrl(url));
-  console.log(wrongUrls);
   return wrongUrls === undefined ? true : false;
 }
 
