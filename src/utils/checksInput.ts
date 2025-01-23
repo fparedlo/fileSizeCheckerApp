@@ -13,7 +13,8 @@ function validUrl(url: string) {
 
 function createsArray(urls: string): string[] {
   const arrayOfUrls = urls.replaceAll(" ", "").split("\n");
-  return arrayOfUrls;
+  const noDuplicates = [...new Set(arrayOfUrls)];
+  return noDuplicates;
 }
 
 function isValidInput(urls: string[]): boolean {
