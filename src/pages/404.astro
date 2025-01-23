@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import sherlock from "@/assets/sherlock.jpg";
+---
+
+<Layout title="404">
+  <h2 class="text-9xl font-extrabold text-center">404</h2>
+  <p class="text-center">Page not found</p>
+  <Image
+    src={sherlock}
+    alt="Sherlock Holmes in a classic hat and coat smoking his pipe."
+    widths={[240, 540, 720, sherlock.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${sherlock.width}px`}
+    class="mt-5 w-[800px] mx-auto"
+    quality="mid"
+    loading="lazy"
+    decoding="async"
+  />
+</Layout>
