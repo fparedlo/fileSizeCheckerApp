@@ -16,7 +16,7 @@ async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
         return {
           url: url,
           size: contentLength
-            ? `${(parseInt(contentLength, 10) / 1024).toFixed(2)} MB`
+            ? `${(parseInt(contentLength, 10) / 1024).toFixed(2)} kB`
             : "Unknown size",
         };
       } catch (error) {
