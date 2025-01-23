@@ -1,33 +1,48 @@
-import { useFormStatus } from "react-dom";
 import fetchFileSizes from "@/utils/fetchFileSizes";
-import { useRef } from "react";
+import { createsArray, isValidInput } from "@/utils/checksInput";
+import { useRef, useState } from "react";
 
 export default function InputBox() {
-  const { pending } = useFormStatus();
+  const [pending, setPending] = useState(false);
   const fileCheckerTextArea = useRef<HTMLTextAreaElement>(null);
 
   const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const urls = fileCheckerTextArea.current?.value
-        .split("\n")
-        .filter((url) => url);
-      if (!urls || urls.length === 0) {
-        throw new Error("Please enter at least one URL");
+      if (!fileCheckerTextArea.current) {
+        throw new Error("No textarea found");
       }
-      const values = await fetchFileSizes(urls);
-      console.log(values);
+      const urls = createsArray(fileCheckerTextArea.current.value);
+      if (isValidInput(urls)) {
+        const sizeInfo = await fetchFileSizes(urls);
+        console.log(sizeInfo);
+      } else {
+        throw new Error("Input is invalid");
+      }
     } catch (e) {
-      console.log(`Error handling the form : ${(e as Error).message}`);
+      console.error(`Error handling the form : ${(e as Error).message}`);
     }
   };
 
   return (
     <form onSubmit={handleForm} className="grid gap-4">
       <label className="grid">
-        Copy paste your file URLs here.
+        <p className="mt-4">
+          <strong>Example:</strong>
+        </p>
+        <code className="p-4 bg-gray-50 border border-gray-200 rounded-lg mb-4">
+          https://placecats.com/neo/300/200
+          <br />
+          https://placecats.com/millie/300/150
+          <br />
+          https://placecats.com/millie_neo/300/200
+          <br />
+          https://placecats.com/neo_banana/300/200
+          <br />
+        </code>
         <textarea
-          className="border p-3"
+          placeholder="Enter URLs here"
+          className="border p-3 rounded-lg resize-none"
           ref={fileCheckerTextArea}
           cols={2}
           rows={10}
