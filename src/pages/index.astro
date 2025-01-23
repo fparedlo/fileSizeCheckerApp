@@ -1,8 +1,10 @@
 ---
 import InputBox from "@/components/client/InputBox";
 import Layout from "@/layouts/Layout.astro";
+import CodeExample from "@/components/server/CodeExample.astro";
 ---
 
 <Layout>
+  <CodeExample />
   <InputBox client:only />
 </Layout>

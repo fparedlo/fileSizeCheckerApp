@@ -1,6 +1,7 @@
 import fetchFileSizes from "@/utils/fetchFileSizes";
 import { createsArray, isValidInput } from "@/utils/checksInput";
 import { useRef, useState } from "react";
+import Button from "@/components/client/Button";
 
 export default function InputBox() {
   const [pending, setPending] = useState(false);
@@ -29,31 +30,16 @@ export default function InputBox() {
   return (
     <form onSubmit={handleForm} className="grid gap-4">
       <label className="grid">
-        <p className="mt-4">
-          <strong>Example:</strong>
-        </p>
-        <code className="p-4 bg-gray-50 border border-gray-200 rounded-lg mb-4">
-          https://resources.mandmdirect.com/assets/homepage/panels/250120/LD19_HPM_desktop.webp
-          <br />
-          https://resources.mandmdirect.com/assets/roundels/2024/Quicklinks/241219/IE/roundel-new-in_desktop.jpg
-          <br />
-          https://resources.mandmdirect.com/assets/roundels/2024/Quicklinks/241219/IE/roundel-mens_desktop.jpg
-        </code>
+        <span className="text-lg sr-only">Enter URLs</span>
         <textarea
-          placeholder="Enter URLs here"
+          placeholder="Enter URLs here following the format in the example above"
           className="border p-3 rounded-lg resize-none"
           ref={fileCheckerTextArea}
           cols={2}
           rows={10}
         />
       </label>
-      <button
-        className="bg-slate-800 text-white rounded-lg py-3 px-4 text-xl font-bold hover:bg-slate-900 disabled:opacity-30"
-        disabled={pending}
-        type="submit"
-      >
-        {pending ? "Checking..." : "Check File Sizes"}
-      </button>
+      <Button pending={pending} />
     </form>
   );
 }
