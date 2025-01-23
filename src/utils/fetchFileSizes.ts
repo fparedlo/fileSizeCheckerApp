@@ -8,7 +8,6 @@ async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
         const response = await fetch(`${CORS_PROXY}/${url}`, {
           method: "HEAD",
         });
-        console.log(response);
         if (!response.ok) {
           throw new Error(`Error fetching ${url}: ${response.statusText}`);
         }
