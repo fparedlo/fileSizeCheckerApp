@@ -4,19 +4,21 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>File Size Checker</title>
 	</head>
-	<body>
-		<slot />
+	<body class="h-screen">
+		<div class="container h-screen mx-auto grid grid-rows-[auto_1fr_auto] gap-4">
+			<header>
+				<h1 class="text-6xl font-extrabold text-center py-5">File Size Checker</h1>
+			</header>
+			<main>
+				<slot/>
+			</main>
+			<footer>
+				<p class="text-center py-3">© 2025 File Size Checker - <a href="https://github.com/fparedlo" rel="noopener noreferrer nofollow" target="_blank" class="underline">FParedes</a> : No rights reserver, still it's creator.</p>
+			</footer>
+		</div>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+
