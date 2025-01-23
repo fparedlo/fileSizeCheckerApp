@@ -8,6 +8,7 @@ export default function InputBox() {
 
   const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setPending(true);
     try {
       if (!fileCheckerTextArea.current) {
         throw new Error("No textarea found");
@@ -20,6 +21,8 @@ export default function InputBox() {
       }
     } catch (e) {
       console.error(`Error handling the form : ${(e as Error).message}`);
+    } finally {
+      setPending(false);
     }
   };
 
@@ -45,11 +48,11 @@ export default function InputBox() {
         />
       </label>
       <button
-        className="bg-slate-800 text-white rounded-lg py-3 px-4 text-xl font-bold hover:bg-slate-900"
+        className="bg-slate-800 text-white rounded-lg py-3 px-4 text-xl font-bold hover:bg-slate-900 disabled:opacity-30"
         disabled={pending}
         type="submit"
       >
-        Check!
+        {pending ? "Checking..." : "Check File Sizes"}
       </button>
     </form>
   );

@@ -1,30 +1,18 @@
-import { z } from "zod";
-
-const zodInputCheck = z.array(z.string().url());
-
-type Urls = string[];
-
-interface FileSize {
-  url: string;
-  size: string;
-}
+import type { Urls, FileSize } from "@/types/app.types";
+const CORS_PROXY = "https://cors-anywhere.herokuapp.com";
 
 async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
   const fileSizes = await Promise.all(
     urls.map(async (url) => {
       try {
-        const response = await fetch(
-          `https://cors-anywhere.herokuapp.com/${url}`,
-          {
-            method: "HEAD",
-          }
-        );
+        const response = await fetch(`${CORS_PROXY}/${url}`, {
+          method: "HEAD",
+        });
         console.log(response);
         if (!response.ok) {
           throw new Error(`Error fetching ${url}: ${response.statusText}`);
         }
         const contentLength = response.headers.get("Content-Length");
-        console.log(contentLength);
         return {
           url: url,
           size: contentLength
@@ -44,13 +32,3 @@ async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
 }
 
 export default fetchFileSizes;
-
-/*
- 
- # Usage Example
-
- fetchFileSizes(urls).then(fileSizes => {
-    console.log(fileSizes);
- });
-
-*/
