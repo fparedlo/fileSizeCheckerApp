@@ -1,48 +1,88 @@
-# Astro Starter Kit: Basics
+# File Size Checker
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the File Size Checker! This small application allows you to drop URLs for assets and get their file sizes. It's a simple tool designed to users quickly check the size of files hosted online.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Table of Contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Opening Issues](#opening-issues)
+- [License](#license)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Features
 
-## 🚀 Project Structure
+- Drop URLs to check the file size of various assets.
+- Simple and user-friendly interface.
+- Open-source and community-driven.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Installation
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+To get started with the Asset Size Checker, follow these steps:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+1. **Clone the repository:**
 
-## 🧞 Commands
+   ```bash
+   git clone https://github.com/yourusername/asset-size-checker.git
 
-All commands are run from the root of the project, from a terminal:
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2. **Navigate to the prohect directory**
 
-## 👀 Want to learn more?
+   ```bash
+   cd filesizecheckerapp
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+   ```
+
+3. **Install the required dependencies:**
+
+   ```bash
+   pnpm i
+
+   ```
+
+4. **Run the application:**
+   ```bash
+   pnpm dev
+   ```
+
+## Usage
+
+1. Open the application in your web browser.
+2. Enter the URL or URLs of the assets you want to check.
+3. Click the "Check File Sizes" button to retrieve the file size.
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository on GitHub.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+5. Open a Pull Request on GitHub
+   Please ensure your code adheres to the project's coding standards and if possible includes appropriate tests.
+
+## Opening Issues
+
+If you encounter any bugs or have feature requests, please open an issue on GitHub:
+
+1. Navigate to the [Issues](https://github.com/fparedlo/fileSizeCheckerApp/issues) tab.
+2. Click on "New Issue."
+3. Provide a clear and descriptive title and description of the issue.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+Thank you for checking out the File Size Checker! I hope you find it useful. Happy coding!
