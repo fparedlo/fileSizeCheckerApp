@@ -17,6 +17,15 @@ Welcome to the File Size Checker! This small application allows you to drop URLs
 - Simple and user-friendly interface.
 - Open-source and community-driven.
 
+## Technologies
+
+- [Astro](https://astro.build/)
+- [React](https://react.dev/)
+- [Tailwind](https://tailwindcss.com/)
+- [Node 22.13.1](https://nodejs.org/en)
+- [PNPM 10.0.0](https://pnpm.io/)
+- [Zod](https://zod.dev/)
+
 ## Installation
 
 To get started with the Asset Size Checker, follow these steps:
