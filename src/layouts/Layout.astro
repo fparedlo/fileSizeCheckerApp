@@ -1,3 +1,8 @@
+---
+const { title } = Astro.props;
+import "@/tailwind/base.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +13,7 @@
       content="App to help people quickly finding the file size of their online assets."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>File Size Checker</title>
+    <title>{title}</title>
   </head>
   <body class="h-screen">
     <div
@@ -28,8 +33,9 @@
             href="https://github.com/fparedlo"
             rel="noopener noreferrer nofollow"
             target="_blank"
-            class="underline">F.Paredes</a
-          >
+            class="underline"
+            >F.Paredes
+          </a>
         </p>
       </footer>
     </div>
