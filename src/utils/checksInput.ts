@@ -14,7 +14,8 @@ function validUrl(url: string) {
 function createsArray(urls: string): string[] {
   const arrayOfUrls = urls.replaceAll(" ", "").split("\n");
   const noDuplicates = [...new Set(arrayOfUrls)];
-  return noDuplicates;
+  const noEmptyStrings = noDuplicates.filter((url) => url !== "");
+  return noEmptyStrings;
 }
 
 function isValidInput(urls: string[]): boolean {
