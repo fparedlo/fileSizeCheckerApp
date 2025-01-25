@@ -3,18 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+	h4 {
+		@apply font-extrabold text-xl;
+	}
 
-   h4 {
-      @apply font-extrabold text-xl;
-   }
+	p,
+	li {
+		@apply font-mono;
+	}
 
-   p,
-   li {
-      @apply font-mono;
-   }
-
-   a {
-      @apply underline font-mono;
-   }
-
+	a {
+		@apply underline font-mono;
+	}
 }
