@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-   details {
-      @apply p-4 space-y-4 bg-gray-50 border border-gray-200 rounded-lg font-mono mb-4;
 
-      summary {
-         @apply font-semibold font-sans;
-      }
-
-      p {
-         a {
-            @apply underline;
-         }
-      }
+   h4 {
+      @apply font-extrabold text-xl;
    }
+
+   p,
+   li {
+      @apply font-mono;
+   }
+
+   a {
+      @apply underline font-mono;
+   }
+
 }

@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props;
 import "@/tailwind/base.css";
+import ExternalLink from "@/components/server/ExternalLink.astro";
 ---
 
 <!doctype html>
@@ -23,20 +24,23 @@ import "@/tailwind/base.css";
         <h1 class="text-6xl font-extrabold text-center py-5">
           File Size Checker
         </h1>
+        <nav class="flex justify-center gap-6">
+          <a href="/">Home</a>
+          <a href="/faq">FAQ</a>
+        </nav>
       </header>
-      <main>
+      <main class="prose mx-auto max-w-full w-full">
         <slot />
       </main>
-      <footer>
-        <p class="text-center py-3">
-          © 2025 File Size Checker - <a
-            href="https://github.com/fparedlo"
-            rel="noopener noreferrer nofollow"
-            target="_blank"
-            class="underline"
-            >F.Paredes
-          </a>
-        </p>
+      <footer class="space-y-1 mb-4">
+        <p class="text-center">© 2025 FileSizeChecker - All rights reserved</p>
+        <nav class="flex justify-center gap-8">
+          <ExternalLink url="https://github.com/fparedlo/fileSizeCheckerApp">
+            Github
+          </ExternalLink>
+          <a href="/terms">Terms and Conditions</a>
+          <ExternalLink url="https://x.com/n_oway_">DM the Author</ExternalLink>
+        </nav>
       </footer>
     </div>
   </body>

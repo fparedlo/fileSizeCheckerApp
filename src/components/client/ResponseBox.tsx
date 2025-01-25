@@ -11,7 +11,7 @@ export default function ResponseBox({ data }: { data: FileSize[] | null }) {
               className="grid gap-2 p-4 bg-gray-50 border border-gray-200 rounded-lg font-mono"
             >
               <span className="text-lg break-all">{file.url}</span>
-              <span className="text-2xl text-right">
+              <span className="text-2xl text-right break-all">
                 <strong>{file.size}</strong>
               </span>
             </li>
