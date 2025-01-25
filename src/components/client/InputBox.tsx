@@ -4,6 +4,7 @@ import type { FileSize } from "@/types/app.types";
 import { createsArray, isValidInput } from "@/utils/checksInput";
 import fetchFileSizes from "@/utils/fetchFileSizes";
 import { useRef, useState } from "react";
+import Loading from "@/components/client/Loading";
 
 export default function InputBox() {
 	const [pending, setPending] = useState(false);
@@ -47,7 +48,7 @@ export default function InputBox() {
 				</label>
 				<Button pending={pending} />
 			</form>
-			<ResponseBox data={data} />
+			{pending ? <Loading /> : <ResponseBox data={data} />}
 		</>
 	);
 }

@@ -5,7 +5,7 @@ export default function Button({ pending }: { pending: boolean }) {
 			disabled={pending}
 			type="submit"
 		>
-			{pending ? "Checking..." : "Check File Sizes"}
+			Check File Sizes
 		</button>
 	);
 }
