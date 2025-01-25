@@ -1,10 +1,10 @@
 import Button from "@/components/client/Button";
+import Loading from "@/components/client/Loading";
 import ResponseBox from "@/components/client/ResponseBox";
 import type { FileSize } from "@/types/app.types";
 import { createsArray, isValidInput } from "@/utils/checksInput";
 import fetchFileSizes from "@/utils/fetchFileSizes";
 import { useRef, useState } from "react";
-import Loading from "@/components/client/Loading";
 
 export default function InputBox() {
 	const [pending, setPending] = useState(false);
