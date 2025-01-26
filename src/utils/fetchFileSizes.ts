@@ -13,7 +13,7 @@ async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
 				method: "HEAD",
 			});
 			if (!response.ok) {
-				throw new Error(`Error fetching ${url}: ${response.statusText}`);
+				throw new Error(`improve${response.statusText}`);
 			}
 			const contentLength = response.headers.get("Content-Length");
 			fileSizes.push({
@@ -25,7 +25,7 @@ async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
 		} catch (error) {
 			fileSizes.push({
 				url: url,
-				size: `Error: ${(error as Error).message}`,
+				size: `${(error as Error).message}`,
 			});
 		}
 
