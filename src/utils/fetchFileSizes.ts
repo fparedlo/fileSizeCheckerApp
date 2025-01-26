@@ -13,7 +13,7 @@ async function fetchFileSizes(urls: Urls): Promise<FileSize[]> {
 				method: "HEAD",
 			});
 			if (!response.ok) {
-				throw new Error(`improve${response.statusText}`);
+				throw new Error(`${response.statusText}`);
 			}
 			const contentLength = response.headers.get("Content-Length");
 			fileSizes.push({
