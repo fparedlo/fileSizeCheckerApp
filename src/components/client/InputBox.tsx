@@ -36,7 +36,7 @@ export default function InputBox() {
 	return (
 		<>
 			<form onSubmit={handleForm} className="grid gap-4">
-				<label className="grid">
+				<label className="grid" aria-label="Input Box for URLs">
 					<span className="text-lg sr-only">Enter URLs</span>
 					<textarea
 						placeholder="Enter URLs here following the format in the example above"
